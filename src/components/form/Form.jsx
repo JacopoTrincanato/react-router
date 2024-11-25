@@ -136,6 +136,19 @@ export default function Form() {
 
     }
 
+    //creo una costante per i tag
+    const tagList = [
+        "Dolci",
+        "Torte",
+        "Ricette vegetariane",
+        "Ricette al forno",
+        "Antipasti",
+        "Primi piatti",
+        "Dolci veloci",
+        "Ricette veloci",
+        "Dolci al cioccolato"
+    ];
+
     //eseguo il return
     return (
         <>
@@ -184,7 +197,7 @@ export default function Form() {
                     </textarea>
 
                     {/* Checkbox per i vari tag*/}
-                    <div>
+                    {/*<div>
 
                         <input type="checkbox"
                             name="tags"
@@ -240,7 +253,13 @@ export default function Form() {
                             onChange={handleFormField}
                         />Dolci al cioccolato
 
-                    </div>
+                    </div>*/}
+
+                    {tagList.map((tag, index) => (<input key={index} type="checkbox"
+                        name="tags"
+                        value={tag}
+                        onChange={handleFormField}
+                    />))}
 
                     {/* Componente AddButton*/}
                     <AddButton />
