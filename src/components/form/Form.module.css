@@ -26,8 +26,10 @@ input[type="checkbox"] {
     padding: 0.5rem;
 }
 
-.liItem {
+.checkContainer {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    width: 70%;
 }

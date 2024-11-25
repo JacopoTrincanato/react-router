@@ -254,12 +254,17 @@ export default function Form() {
                         />Dolci al cioccolato
 
                     </div>*/}
+                    <div className={style.checkContainer}>
+                        {tagList.map((tag, index) => (
+                            <div key={index}>
+                                <input type="checkbox"
+                                    name="tags"
+                                    value={tag}
+                                    onChange={handleFormField}
+                                /> {tag}
+                            </div>))}
+                    </div>
 
-                    {tagList.map((tag, index) => (<input key={index} type="checkbox"
-                        name="tags"
-                        value={tag}
-                        onChange={handleFormField}
-                    />))}
 
                     {/* Componente AddButton*/}
                     <AddButton />
