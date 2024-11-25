@@ -45,7 +45,6 @@ export default function Form() {
 
     useEffect(fetchData, [])
 
-
     //creo una funzione per aggiungere un titolo
     function addPost(e) {
         //Impedisco il comportamento predefinito del form
@@ -197,63 +196,7 @@ export default function Form() {
                     </textarea>
 
                     {/* Checkbox per i vari tag*/}
-                    {/*<div>
 
-                        <input type="checkbox"
-                            name="tags"
-                            value="Dolci"
-                            onChange={handleFormField}
-                        />Dolci
-
-                        <input type="checkbox"
-                            name="tags"
-                            value="Torte"
-                            onChange={handleFormField}
-                        />Torte
-
-                        <input type="checkbox"
-                            name="tags"
-                            value="Ricette vegetariane"
-                            onChange={handleFormField}
-                        />Ricette vegetariane
-
-                        <input type="checkbox"
-                            name="tags"
-                            value="Ricette al forno"
-                            onChange={handleFormField}
-                        />Ricette al forno
-
-                        <input type="checkbox"
-                            name="tags"
-                            value="Antipasti"
-                            onChange={handleFormField}
-                        />Antipasti
-
-                        <input type="checkbox"
-                            name="tags"
-                            value="Primi piatti"
-                            onChange={handleFormField}
-                        />Primi piatti
-
-                        <input type="checkbox"
-                            name="tags"
-                            value="Dolci veloci"
-                            onChange={handleFormField}
-                        />Dolci veloci
-
-                        <input type="checkbox"
-                            name="tags"
-                            value="Ricette veloci"
-                            onChange={handleFormField}
-                        />Ricette veloci
-
-                        <input type="checkbox"
-                            name="tags"
-                            value="Dolci al cioccolato"
-                            onChange={handleFormField}
-                        />Dolci al cioccolato
-
-                    </div>*/}
                     <div className={style.checkContainer}>
                         {tagList.map((tag, index) => (
                             <div key={index}>
@@ -265,7 +208,6 @@ export default function Form() {
                             </div>))}
                     </div>
 
-
                     {/* Componente AddButton*/}
                     <AddButton />
 
@@ -276,6 +218,5 @@ export default function Form() {
             {Array.isArray(postsData) ? postsData.map((post, slug) => <Card key={post.slug} cardPost={post} eliminatePost={eliminate} cardSlug={post.slug}></Card>) : <p>Nessun risultato</p>}
         </>
     )
-
 
 }
