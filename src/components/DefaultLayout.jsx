@@ -6,7 +6,7 @@ import AppHeader from "./AppHeader";
 import AppFooter from "./AppFooter";
 
 //creo il componente Layout
-export default function Layout() {
+export default function DefaultLayout() {
     //eseguo il return
     return (
         <>
