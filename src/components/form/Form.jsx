@@ -10,6 +10,9 @@ import AddButton from "../buttons/AddButton";
 //importo la Card
 import Card from "../card/Card";
 
+//importo FormInputs
+import FormInputs from "../FormInputs/FormInputs";
+
 //Creo il modello iniziale del post
 const addedPost = {
     title: "",
@@ -77,39 +80,6 @@ export default function Form() {
 
     }
 
-    function handleFormField(e) {
-
-        // Destrutturo gli attributi dell'evento target per ottenere name, value, type e checked
-        const { name, value, type, checked } = e.target;
-
-        // Controllo se il campo è un checkbox e se il nome è "tags"
-        if (type === "checkbox" && name === "tags") {
-            // Aggiorno lo stato dei tag nel formData.
-            setFormData((prevState) => ({
-                // Mantengo invariato il resto dei dati nel formData
-                ...prevState,
-                tags: checked
-
-                    // Se il checkbox è selezionato, aggiungo il valore al campo tags
-                    ? [...prevState.tags, value]
-
-                    // Altrimenti, rimuovo il valore dal campo tags
-                    : prevState.tags.filter((tag) => tag !== value),
-            }));
-        }
-        // Per tutti gli altri campi
-        else {
-            setFormData({
-
-                // Mantengo invariato il resto dei dati nel formData
-                ...formData,
-
-                // Aggiorno il campo corrispondente (name è la chiave del dato) con il valore inserito
-                [name]: value,
-            });
-        }
-    }
-
     //creo una funzione per cancellare un titolo del post
     function eliminate(e) {
 
@@ -135,19 +105,6 @@ export default function Form() {
 
     }
 
-    //creo una costante per i tag
-    const tagList = [
-        "Dolci",
-        "Torte",
-        "Ricette vegetariane",
-        "Ricette al forno",
-        "Antipasti",
-        "Primi piatti",
-        "Dolci veloci",
-        "Ricette veloci",
-        "Dolci al cioccolato"
-    ];
-
     //eseguo il return
     return (
         <>
@@ -159,7 +116,7 @@ export default function Form() {
 
                 <form onSubmit={addPost}>
 
-                    {/* Campo per il titolo del post */}
+                    {/*{ Campo per il titolo del post }
                     <input type="text"
                         placeholder="Inserisci il titolo"
                         className={style.placeholder}
@@ -169,7 +126,7 @@ export default function Form() {
                         onChange={handleFormField}
                     />
 
-                    {/* Campo per il link all'immagine */}
+                    { Campo per il link all'immagine }
                     <input type="text"
                         placeholder="Inserisci l'immagine"
                         className={style.placeholder}
@@ -177,7 +134,7 @@ export default function Form() {
                         value={formData.image}
                         onChange={handleFormField} />
 
-                    {/* Campo per lo slug del post */}
+                    { Campo per lo slug del post }
                     <input type="text"
                         placeholder="Inserisci lo slug"
                         className={style.placeholder}
@@ -185,7 +142,7 @@ export default function Form() {
                         value={formData.slug}
                         onChange={handleFormField} />
 
-                    {/* Campo per il contenuto del post */}
+                    { Campo per il contenuto del post }
                     <textarea name="content"
                         placeholder="Inserisci il contenuto"
                         id="content" rows="5"
@@ -195,7 +152,7 @@ export default function Form() {
 
                     </textarea>
 
-                    {/* Checkbox per i vari tag*/}
+                    { Checkbox per i vari tag}
 
                     <div className={style.checkContainer}>
                         {tagList.map((tag, index) => (
@@ -206,7 +163,9 @@ export default function Form() {
                                     onChange={handleFormField}
                                 /> {tag}
                             </div>))}
-                    </div>
+                    </div>*/}
+
+                    <FormInputs inputData={formData} setInputData={setFormData} />
 
                     {/* Componente AddButton*/}
                     <AddButton />
