@@ -116,55 +116,7 @@ export default function Form() {
 
                 <form onSubmit={addPost}>
 
-                    {/*{ Campo per il titolo del post }
-                    <input type="text"
-                        placeholder="Inserisci il titolo"
-                        className={style.placeholder}
-                        name="title"
-                        required
-                        value={formData.title}
-                        onChange={handleFormField}
-                    />
-
-                    { Campo per il link all'immagine }
-                    <input type="text"
-                        placeholder="Inserisci l'immagine"
-                        className={style.placeholder}
-                        name="image"
-                        value={formData.image}
-                        onChange={handleFormField} />
-
-                    { Campo per lo slug del post }
-                    <input type="text"
-                        placeholder="Inserisci lo slug"
-                        className={style.placeholder}
-                        name="slug"
-                        value={formData.slug}
-                        onChange={handleFormField} />
-
-                    { Campo per il contenuto del post }
-                    <textarea name="content"
-                        placeholder="Inserisci il contenuto"
-                        id="content" rows="5"
-                        className={style.placeholder}
-                        value={formData.content}
-                        onChange={handleFormField}>
-
-                    </textarea>
-
-                    { Checkbox per i vari tag}
-
-                    <div className={style.checkContainer}>
-                        {tagList.map((tag, index) => (
-                            <div key={index}>
-                                <input type="checkbox"
-                                    name="tags"
-                                    value={tag}
-                                    onChange={handleFormField}
-                                /> {tag}
-                            </div>))}
-                    </div>*/}
-
+                    {/* Componente FormInputs*/}
                     <FormInputs inputData={formData} setInputData={setFormData} />
 
                     {/* Componente AddButton*/}
