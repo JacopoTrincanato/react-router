@@ -18,14 +18,15 @@ export default function ListaPost() {
                 console.log(data.data);
 
                 // Creazione di un array vuoto dove inserire i tag
-                const newTags = [];
+                const newTags = new Set();
 
+                //ciclo all'interno di data per recuperare tutti i tag, poi ciclo nuovamente all'interno dei tag per recuperare il singolo tag
                 data.data.forEach(post => {
-                    post.tags.forEach(tag => newTags.push(tag));
+                    post.tags.forEach(tag => newTags.add(tag));
                 });
 
                 // Aggiorno lo stato con i tag
-                setUniqueTags(newTags);
+                setUniqueTags(Array.from(newTags));
             })
             .catch(err => console.error("Errore nella fetch:", err));
     }, []);
