@@ -4,9 +4,6 @@ import { useState, useEffect } from "react";
 //importo lo stile
 import style from "./Form.module.css"
 
-//importo i post
-//import posts from "../../data/posts";
-
 //importo AddButton 
 import AddButton from "../buttons/AddButton";
 
@@ -137,9 +134,6 @@ export default function Form() {
 
             })
 
-
-
-
     }
 
     //eseguo il return
@@ -147,7 +141,6 @@ export default function Form() {
         <>
 
             <button type='button' onClick={handleClick} className={style.fetchBtn}>Fetch Posts</button>
-
 
             <section>
                 <h2>Aggiungi un nuovo post utilizzando il form</h2>
@@ -249,16 +242,12 @@ export default function Form() {
 
                     </div>
 
-
-
                     {/* Componente AddButton*/}
                     <AddButton />
 
                 </form>
 
-
             </section>
-            {/*postsData.map((post, slug) => <Card key={post.slug} cardPost={post} eliminatePost={eliminate} cardSlug={post.slug}></Card>)*/}
 
             {Array.isArray(postsData) ? postsData.map((post, slug) => <Card key={post.slug} cardPost={post} eliminatePost={eliminate} cardSlug={post.slug}></Card>) : <p>Nessun risultato</p>}
         </>
