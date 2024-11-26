@@ -12,7 +12,6 @@ import Card from "../card/Card";
 
 //importo FormInputs
 import FormInputs from "../FormInputs/FormInputs";
-import { data } from "react-router-dom";
 
 //Creo il modello iniziale del post
 const addedPost = {
@@ -49,7 +48,7 @@ export default function Form() {
 
     useEffect(fetchData, [])
 
-    //creo una funzione per aggiungere un titolo
+    //creo una funzione per aggiungere un post
     function addPost(e) {
         //Impedisco il comportamento predefinito del form
         e.preventDefault()
@@ -81,7 +80,7 @@ export default function Form() {
 
     }
 
-    //creo una funzione per cancellare un titolo del post
+    //creo una funzione per cancellare un post
     function eliminate(e) {
 
         //Ottengo lo slug del post da eliminare dal pulsante associato

@@ -2,10 +2,14 @@
 import { useState, useEffect } from "react";
 
 //importo il form
-import Form from "../components/form/Form";
+//import Form from "../components/form/Form";
+
+import Card from '../components/card/Card'
 
 //creo il componente ListaPost
 export default function ListaPost() {
+
+    const [postsData] = useState([])
 
     // Stato per i tag unici
     const [uniqueTags, setUniqueTags] = useState([]);
@@ -35,8 +39,10 @@ export default function ListaPost() {
     return (
         <main>
 
-            {/* Componente Form */}
-            <Form />
+            {/* Componente Form 
+            <Form />*/}
+
+            {Array.isArray(postsData) ? postsData.map((post, slug) => <Card key={post.slug} cardPost={post} eliminatePost={eliminate} cardSlug={post.slug}></Card>) : <p>Nessun risultato</p>}
 
             <section>
                 <h3>
