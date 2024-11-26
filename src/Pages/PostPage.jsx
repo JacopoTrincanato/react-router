@@ -29,6 +29,16 @@ export default function PostPage() {
             .then(data => {
                 console.log(data.data);
 
+                const keys = Object.keys(data)
+                console.log(keys);
+
+                if (keys.includes('error')) {
+                    navigate('/404')
+                } else {
+                    setPost(data.data)
+                }
+
+
             }).catch(err => {
                 console.log(err);
 

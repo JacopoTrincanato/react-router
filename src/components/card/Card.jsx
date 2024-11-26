@@ -7,6 +7,7 @@ import Button from '../buttons/Button';
 //importo le icone di fontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 
 //creo il componente Card e gli aggiungo la props post
 export default function Card({ cardPost, cardSlug, eliminatePost }) {
@@ -19,7 +20,10 @@ export default function Card({ cardPost, cardSlug, eliminatePost }) {
                 <div className={style.card}>
                     <div className={`${style.cardTop} ${style.dFlex}`}>
                         {/* Immagine associata al post, con un testo alternativo generico. */}
-                        <img src={'http://localhost:3002/posts/../img/' + cardPost.image} alt="immagine" />
+                        <Link to={`/posts/${data.slug}`}>
+                            <img src={'http://localhost:3002/posts/../img/' + cardPost.image} alt="immagine" />
+                        </Link>
+
                     </div>
 
                     <div className={style.cardBottom}>
