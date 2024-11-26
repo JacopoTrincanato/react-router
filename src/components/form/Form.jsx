@@ -12,6 +12,7 @@ import Card from "../card/Card";
 
 //importo FormInputs
 import FormInputs from "../FormInputs/FormInputs";
+import { data } from "react-router-dom";
 
 //Creo il modello iniziale del post
 const addedPost = {
