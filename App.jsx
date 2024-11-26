@@ -20,6 +20,7 @@ import CreaPost from './src/Pages/CreaPost'
 
 //importo PostPage
 import PostPage from './src/Pages/PostPage'
+import NotFound from './src/Pages/NotFound'
 
 function App() {
 
@@ -38,6 +39,8 @@ function App() {
               <Route path=':slug' element={<PostPage />}></Route>
             </Route>
           </Route>
+
+          <Route path='*' element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
     </>

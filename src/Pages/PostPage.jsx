@@ -14,7 +14,7 @@ export default function PostPage() {
     const navigate = useNavigate()
 
     //creo una costante che contiene i dati del post
-    const [post, setPost] = useState()
+    const [post, setPost] = useState(null)
 
     //creo una costante che contiene lo slug del post
     const { slug } = useParams()
@@ -43,7 +43,7 @@ export default function PostPage() {
                 console.log(err);
 
             })
-    })
+    }, [])
 
     //eseguo il return
     return (
