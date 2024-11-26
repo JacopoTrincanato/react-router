@@ -18,6 +18,9 @@ import ListaPost from './src/Pages/ListaPost'
 //importo CreaPost
 import CreaPost from './src/Pages/CreaPost'
 
+//importo PostPage
+import PostPage from './src/Pages/PostPage'
+
 function App() {
 
   return (
@@ -32,6 +35,7 @@ function App() {
             <Route path='/ChiSiamo' element={<ChiSiamo />}></Route>
             <Route path='/ListaPost' element={<ListaPost />}>
               <Route path='create' element={<CreaPost />}></Route>
+              <Route path=':slug' element={<PostPage />}></Route>
             </Route>
           </Route>
         </Routes>
