@@ -34,13 +34,13 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route path='/' element={<Homepage />}></Route>
             <Route path='/ChiSiamo' element={<ChiSiamo />}></Route>
-            <Route path='/ListaPost' element={<ListaPost />}>
-              <Route path='create' element={<CreaPost />}></Route>
-              <Route path=':slug' element={<PostPage />}></Route>
-            </Route>
+            <Route path='/ListaPost' element={<ListaPost />}></Route>
+            <Route path='/ListaPost/create' element={<CreaPost />}></Route>
+            <Route path='/ListaPost/:slug' element={<PostPage />}></Route>
+            <Route path='*' element={<NotFound />}></Route>
           </Route>
 
-          <Route path='*' element={<NotFound />}></Route>
+
         </Routes>
       </BrowserRouter>
     </>
