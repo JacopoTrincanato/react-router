@@ -33,10 +33,10 @@ function App() {
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path='/' element={<Homepage />}></Route>
-            <Route path='/ChiSiamo' element={<ChiSiamo />}></Route>
-            <Route path='/ListaPost' element={<ListaPost />}></Route>
-            <Route path='/ListaPost/create' element={<CreaPost />}></Route>
-            <Route path='/ListaPost/:slug' element={<PostPage />}></Route>
+            <Route path='/chisiamo' element={<ChiSiamo />}></Route>
+            <Route path='/listapost' element={<ListaPost />}></Route>
+            <Route path='/listapost/create' element={<CreaPost />}></Route>
+            <Route path='/listapost/:slug' element={<PostPage />}></Route>
             <Route path='*' element={<NotFound />}></Route>
           </Route>
 

@@ -9,8 +9,8 @@ export default function Navbar() {
             {/*creo la navbar */}
             <nav>
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/ChiSiamo">Chi Siamo</NavLink>
-                <NavLink to="/ListaPost">Lista Post</NavLink>
+                <NavLink to="/chisiamo">Chi Siamo</NavLink>
+                <NavLink to="/listapost">Lista Post</NavLink>
             </nav>
         </>
     )
