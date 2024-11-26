@@ -27,7 +27,6 @@ const addedPost = {
 //creo il componente Form
 export default function Form() {
     const [formData, setFormData] = useState(addedPost)
-    //const [initialPosts, setInitialPosts] = useState([]) /*posts*/
 
     const [postsData, setPostsData] = useState([])
 
