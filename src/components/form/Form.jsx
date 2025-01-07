@@ -7,9 +7,6 @@ import style from "./Form.module.css"
 //importo AddButton 
 import AddButton from "../buttons/AddButton";
 
-//importo la Card
-import Card from "../card/Card";
-
 //importo FormInputs
 import FormInputs from "../FormInputs/FormInputs";
 
@@ -100,7 +97,6 @@ export default function Form() {
 
             </section>
 
-            {/*Array.isArray(postsData) ? postsData.map((post, slug) => <Card key={post.slug} cardPost={post} eliminatePost={eliminate} cardSlug={post.slug}></Card>) : <p>Nessun risultato</p>*/}
         </>
     )
 

@@ -30,31 +30,6 @@ export default function ListaPost() {
 
     useEffect(fetchData, [])
 
-    //creo una funzione per cancellare un post
-    /*function eliminate(e) {
-
-        //Ottengo lo slug del post da eliminare dal pulsante associato
-        const slug = e.target.getAttribute('dataSlug')
-
-        console.log(slug);
-
-        //Faccio una chiamata AJAX di tipo delete per cancellare un post
-        fetch('http://localhost:3002/posts/' + slug, {
-
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json())
-            .then(response => {
-                console.log(response);
-                //Aggiorno lo stato con la lista filtrata
-                setPostsData(response.data)
-
-            })
-
-    }*/
-
     //eseguo il return
     return (
         <>
