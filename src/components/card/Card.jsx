@@ -4,10 +4,10 @@ import style from './Card.module.css'
 //importo il bottone
 import Button from '../buttons/Button';
 
-//importo le icone di fontAwesome
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { faTrash } from "@fortawesome/free-solid-svg-icons";
+//importo Link
 import { Link } from 'react-router-dom';
+
+//importo DeleteButton
 import DeleteButton from '../buttons/DeleteButton';
 
 //creo il componente Card e gli aggiungo la props post
@@ -46,11 +46,7 @@ export default function Card({ cardPost, cardSlug, setPostsData }) {
                         <Button />
 
                         {/* Pulsante per eliminare il post. Passa l'indice come dato tramite `data-index`. */}
-                        {/*<button onClick={eliminatePost} data-slug={cardSlug} className={style.deleteBtn}>
-                            <FontAwesomeIcon icon={faTrash} />
-                        </button>*/}
-
-                        <DeleteButton setPostsData={setPostsData} />
+                        <DeleteButton setPostsData={setPostsData} cardSlug={cardSlug} />
                     </div>
                 </div>
             )}

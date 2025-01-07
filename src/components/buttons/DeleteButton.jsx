@@ -5,13 +5,13 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 //importo lo stile
 import style from './DeleteButton.module.css'
 
-export default function DeleteButton({ setPostsData }) {
+export default function DeleteButton({ setPostsData, cardSlug }) {
 
     //creo una funzione per cancellare un post
     function eliminate(e) {
 
         //Ottengo lo slug del post da eliminare dal pulsante associato
-        const slug = e.target.getAttribute('dataSlug')
+        const slug = e.target.getAttribute('data-slug')
 
         console.log(slug);
 
@@ -35,13 +35,10 @@ export default function DeleteButton({ setPostsData }) {
 
     return (
         <>
-            <button onClick={eliminate} className={style.deleteBtn}>
+            <button onClick={eliminate} data-slug={cardSlug} className={style.deleteBtn}>
                 <FontAwesomeIcon icon={faTrash} />
             </button>
 
-            {/*<button onClick={eliminate} dataSlug={cardSlug} className={style.deleteBtn}>
-                <FontAwesomeIcon icon={faTrash} />
-            </button> */}
         </>
     )
 }

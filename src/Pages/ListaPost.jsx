@@ -31,7 +31,7 @@ export default function ListaPost() {
     useEffect(fetchData, [])
 
     //creo una funzione per cancellare un post
-    function eliminate(e) {
+    /*function eliminate(e) {
 
         //Ottengo lo slug del post da eliminare dal pulsante associato
         const slug = e.target.getAttribute('dataSlug')
@@ -53,7 +53,7 @@ export default function ListaPost() {
 
             })
 
-    }
+    }*/
 
     //eseguo il return
     return (
@@ -61,7 +61,7 @@ export default function ListaPost() {
 
             <button type='button' onClick={handleClick} className={style.fetchBtn}>Fetch Posts</button>
 
-            {Array.isArray(postsData) ? postsData.map((post, slug) => <Card key={post.slug} cardPost={post} setPostsData={setPostsData} eliminatePost={eliminate} cardSlug={post.slug}></Card>) : <p>Nessun risultato</p>}
+            {Array.isArray(postsData) ? postsData.map((post, slug) => <Card key={slug} cardPost={post} setPostsData={setPostsData} cardSlug={post.slug}></Card>) : <p>Nessun risultato</p>}
         </>
     )
 
