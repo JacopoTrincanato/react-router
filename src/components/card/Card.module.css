@@ -1,14 +1,10 @@
 .card {
     width: 600px;
-    margin: auto;
-    margin-top: 1rem;
-    margin-bottom: 4rem;
-
+    margin: 1rem auto 4rem;
 
     .cardTop {
         background-color: #cccccc;
         height: 400px;
-        font-size: 5rem;
         border-radius: 20px 20px 0 0;
         box-shadow: 0 0 3px lightgrey;
 
@@ -16,6 +12,7 @@
             border-radius: 20px 20px 0 0;
             object-fit: contain;
         }
+
     }
 
     .cardBottom {
@@ -24,12 +21,6 @@
         border-radius: 0 0 20px 20px;
         box-shadow: 0 0 3px lightgrey;
     }
-}
-
-.dFlex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .mt1 {
@@ -50,12 +41,4 @@
 
 .php {
     color: lightsteelblue;
-}
-
-.deleteBtn {
-    background-color: rgb(238, 14, 14);
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    margin-left: 1rem;
 }

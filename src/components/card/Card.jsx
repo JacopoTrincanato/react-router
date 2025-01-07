@@ -5,12 +5,13 @@ import style from './Card.module.css'
 import Button from '../buttons/Button';
 
 //importo le icone di fontAwesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
+import DeleteButton from '../buttons/DeleteButton';
 
 //creo il componente Card e gli aggiungo la props post
-export default function Card({ cardPost, cardSlug, eliminatePost }) {
+export default function Card({ cardPost, cardSlug, setPostsData }) {
 
     //eseguo il return
     return (
@@ -18,7 +19,7 @@ export default function Card({ cardPost, cardSlug, eliminatePost }) {
             {/*Se cardPost esiste e se il post è pubblicato genera un nuovo post */}
             {cardPost && (
                 <div className={style.card}>
-                    <div className={`${style.cardTop} ${style.dFlex}`}>
+                    <div className={`${style.cardTop}`}>
                         {/* Immagine associata al post, con un testo alternativo generico. */}
                         <Link to={`/listapost/${cardSlug}`}>
                             <img src={'http://localhost:3002/posts/../img/' + cardPost.image} alt="immagine" />
@@ -45,9 +46,11 @@ export default function Card({ cardPost, cardSlug, eliminatePost }) {
                         <Button />
 
                         {/* Pulsante per eliminare il post. Passa l'indice come dato tramite `data-index`. */}
-                        <button onClick={eliminatePost} data-slug={cardSlug} className={style.deleteBtn}>
+                        {/*<button onClick={eliminatePost} data-slug={cardSlug} className={style.deleteBtn}>
                             <FontAwesomeIcon icon={faTrash} />
-                        </button>
+                        </button>*/}
+
+                        <DeleteButton setPostsData={setPostsData} />
                     </div>
                 </div>
             )}

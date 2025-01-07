@@ -25,6 +25,7 @@ export default function ListaPost() {
     //creo la funzione handleClick
     function handleClick() {
         fetchData()
+
     }
 
     useEffect(fetchData, [])
@@ -33,7 +34,7 @@ export default function ListaPost() {
     function eliminate(e) {
 
         //Ottengo lo slug del post da eliminare dal pulsante associato
-        const slug = e.target.getAttribute('data-slug')
+        const slug = e.target.getAttribute('dataSlug')
 
         console.log(slug);
 
@@ -60,7 +61,7 @@ export default function ListaPost() {
 
             <button type='button' onClick={handleClick} className={style.fetchBtn}>Fetch Posts</button>
 
-            {Array.isArray(postsData) ? postsData.map((post, slug) => <Card key={post.slug} cardPost={post} eliminatePost={eliminate} cardSlug={post.slug}></Card>) : <p>Nessun risultato</p>}
+            {Array.isArray(postsData) ? postsData.map((post, slug) => <Card key={post.slug} cardPost={post} setPostsData={setPostsData} eliminatePost={eliminate} cardSlug={post.slug}></Card>) : <p>Nessun risultato</p>}
         </>
     )
 
